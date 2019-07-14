@@ -7,7 +7,7 @@ import csv
 
 POPULATION_SIZE = 100
 GENE_SIZE = 10
-MUTATION =111
+MUTATION = 1
 # This class designates Individuals as having a Gene variable and a fitness variable
 class Individual:
     def __init__(self, gene, fitness):
