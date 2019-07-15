@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="531259b2-eae8-41ae-8c98-ba06956cc6ae" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Genetic Algorithm Tests/Best_broken_1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genetic Algorithm Tests/Best_broken_2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genetic Algorithm Tests/Best_broken_3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genetic Algorithm Tests/F(X2) Broken.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genetic Algorithm Tests/Mean_Broken_1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genetic Algorithm Tests/Mean_Broken_2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genetic Algorithm Tests/Mean_Broken_3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genetic Algorithm Tests/f(x,y) = 0.26.( X2  +  y2 ) – 0.48.x.y n  results.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,15 +11,33 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Genetic Algorithm Tests/GA_f_2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="174" lean-forward="true" selection-start-line="174" selection-end-line="174" />
+            <state relative-caret-position="272">
+              <caret line="177" selection-start-line="177" selection-end-line="179" selection-end-column="97" />
               <folding>
                 <element signature="e#29#47#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Genetic Algorithm Tests/GA_f_3.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="283">
+              <caret line="154" selection-start-line="154" selection-end-line="154" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Genetic Algorithm Tests/GA.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -39,7 +50,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/Genetic Algorithm Tests/GA.py" />
         <option value="$PROJECT_DIR$/Genetic Algorithm Tests/GA_f_2.py" />
+        <option value="$PROJECT_DIR$/Genetic Algorithm Tests/GA_f_3.py" />
       </list>
     </option>
   </component>
@@ -54,7 +67,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="x" value="1747" />
+    <option name="y" value="81" />
     <option name="width" value="1440" />
     <option name="height" value="816" />
   </component>
@@ -63,6 +77,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -79,7 +94,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -99,7 +113,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.GA_f_3">
     <configuration name="GA_f_2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="BioComputation" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -121,8 +135,30 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="GA_f_3" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="BioComputation" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Genetic Algorithm Tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Genetic Algorithm Tests/GA_f_3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.GA_f_3" />
         <item itemvalue="Python.GA_f_2" />
       </list>
     </recent_temporary>
@@ -138,19 +174,22 @@
       <option name="presentableId" value="Default" />
       <updated>1563128686706</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added comments">
+      <created>1563150425279</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1563150425279</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="816" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" sideWeight="0.5003524" side_tool="true" weight="0.32872927" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49964765" weight="0.32872927" />
@@ -158,27 +197,69 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32872927" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32872927" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5003524" side_tool="true" weight="0.32872927" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added comments" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Genetic Algorithm Tests/Mean_Broken_3.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Genetic Algorithm Tests/Mean_Broken_1.txt">
+    <entry file="file://$PROJECT_DIR$/Genetic Algorithm Tests/Mean_Broken_3.txt" />
+    <entry file="file://$PROJECT_DIR$/Genetic Algorithm Tests/Mean_Broken_1.txt" />
+    <entry file="file://$PROJECT_DIR$/Genetic Algorithm Tests/GA.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-379" />
+        <state relative-caret-position="135">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Genetic Algorithm Tests/GA_f_2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="174" lean-forward="true" selection-start-line="174" selection-end-line="174" />
+        <state relative-caret-position="272">
+          <caret line="177" selection-start-line="177" selection-end-line="179" selection-end-column="97" />
           <folding>
             <element signature="e#29#47#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Genetic Algorithm Tests/GA_f_3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="154" selection-start-line="154" selection-end-line="154" />
         </state>
       </provider>
     </entry>
