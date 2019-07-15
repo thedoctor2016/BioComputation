@@ -8,8 +8,8 @@ import csv
 # This GA Carries out the minimisation task on a floating point set.
 
 POPULATION_SIZE = 500
-GENE_SIZE = 10
-MUTATION = 1
+GENE_SIZE = 20
+MUTATION = 0.02
 # This class designates Individuals as having a Gene variable and a fitness variable
 class Individual:
     def __init__(self, gene, fitness):
@@ -28,7 +28,7 @@ def populate_population_floats():
 
     for i in range(POPULATION_SIZE):
         for j in range(GENE_SIZE):
-            gene[j] = np.random.uniform(0, 5.12)
+            gene[j] = np.random.uniform(-5.12, 5.12)
         population_list[i].gene = gene
         population_list[i].fitness = calculate_fitness_e3(population_list[i].gene)
         gene = [None] * GENE_SIZE
@@ -140,9 +140,10 @@ def mutation2(population_list):
         for j in range(GENE_SIZE):
             if random() < MUTATION:
                 if population_list[i].gene[j] > 0:
-                    population_list[i].gene[j] = population_list[i].gene[j] -1
+                    population_list[i].gene[j] = population_list[i].gene[j] - 1
                 else:
                     population_list[i].gene[j] = population_list[i].gene[j] + 1
+
 
             offspring[i] = population_list[i]
 
@@ -157,9 +158,9 @@ def main():
     population_list = populate_population_floats()
     i =1
 
-    f = open('Run_M__2_3.txt','w')
-    f2 = open('Run_B_2_3.txt','w')
-    for i in range(100):
+    f = open('Run_Mean n=20_POP=500 _3.txt','w')
+    f2 = open('Run_best n=20_POP=500_3 .txt','w')
+    for i in range(50):
         population_list = selection_min(population_list)
         population_list = cross_over_min(population_list)
         population_list = mutation2(population_list)
