@@ -9,6 +9,8 @@ POPULATION_SIZE = 100
 GENE_SIZE = 10
 MUTATION = 1
 # This class designates Individuals as having a Gene variable and a fitness variable
+
+
 class Individual:
     def __init__(self, gene, fitness):
         self.gene = gene
@@ -32,36 +34,7 @@ def populate_population_max():
 
     return population_list
 
-
-def populate_population_min():
-
-    population_list = [Individual(None, None) for _ in range(POPULATION_SIZE)]
-    gene = [None] * GENE_SIZE
-
-    for i in range(POPULATION_SIZE):
-        for j in range(GENE_SIZE):
-            gene[j] = randrange(2)
-        population_list[i].gene = gene
-        population_list[i].fitness = calculate_fitness_e2(population_list[i].gene)
-        gene = [None] * GENE_SIZE
-
-    return population_list
-
-
-def populate_population_floats():
-
-    population_list = [Individual(None, None) for _ in range(POPULATION_SIZE)]
-    gene = [None] * GENE_SIZE
-    x = 0.00
-
-    for i in range(POPULATION_SIZE):
-        for j in range(GENE_SIZE):
-            gene[j] = np.random.uniform(0, 5.12)
-        population_list[i].gene = gene
-        population_list[i].fitness = calculate_fitness_e3(population_list[i].gene)
-        print(gene)
-        gene = [None] * GENE_SIZE
-
+# this function converts the string to base 2 and then squares the integer value.
 def calculate_fitness_e1(gene):
     fitness = 0
     for i in range(GENE_SIZE):
@@ -71,28 +44,7 @@ def calculate_fitness_e1(gene):
     return fitness
 
 
-def calculate_fitness_e2(gene):
-    x = gene[:len(gene)//2]
-    y = gene[len(gene)//2:]
-    k = x.pop(0)
-    z = y.pop(0)
-    in_x = int("".join(str(i) for i in x), 2)
-    in_y = int("".join(str(i) for i in y), 2)
-    if k ==0:
-        in_x = -in_x
-    if z ==0:
-        in_y = -in_y
-    fn1 = 0.26 * ((in_x ** 2) + (in_y ** 2))
-    fn2 = -0.48 * (in_x * in_y)
-    fitness = fn1 + fn2
-    return fitness
-
-
-def calculate_fitness_e3(gene):
-    gene = [5.12,5.12,5.12,5.12,5.12,5.12,5.12,5.12,5.12,5.12]
-    fitness = -(10 * len(gene) + sum([(x ** 2 - 10 * np.cos(2 * math.pi * x)) for x in gene]))
-    return fitness
-
+# this function adds up all the fitness values and divides it by the population size to get the average
 
 
 def calculate_mean_fitness(population_list):
@@ -102,6 +54,9 @@ def calculate_mean_fitness(population_list):
         mean_fitness += population_list[i].fitness
 
     return mean_fitness / POPULATION_SIZE
+
+# this function sets a value to find the best fitness (Highest in this case) and if a value is higher than it
+# # best fitness gets that fitness set to it.
 
 
 def calculate_best_fitness(population_list):
@@ -114,6 +69,9 @@ def calculate_best_fitness(population_list):
 
     return best_fitness
 
+# this function sets a value to find the worst fitness (Lowest in this case) and if a value is lower than it then
+#  worst fitness gets that fitness set to it.
+
 
 def calculate_worst_fitness(population_list):
     worst_fitness = 0
@@ -123,6 +81,8 @@ def calculate_worst_fitness(population_list):
             worst_fitness = population_list[i].fitness
 
     return worst_fitness
+
+# this function selects the best individual from two random parents by comparing fitness values.
 
 
 def selection_max(population_list):
@@ -139,25 +99,10 @@ def selection_max(population_list):
     return offspring
 
 
-def selection_min(population_list):
-    offspring = [Individual(None, None) for _ in range(POPULATION_SIZE)]
-    for i in range(POPULATION_SIZE):
-        parent1 = randrange(POPULATION_SIZE)
-        parent2 = randrange(POPULATION_SIZE)
-
-        if population_list[parent1].fitness <= population_list[parent2].fitness:
-            offspring[i] = population_list[parent1]
-        else:
-            offspring[i] = population_list[parent2]
-
-    return offspring
-
+# this function selects the best individual from the offspring by comparing fitness values.
 
 def selection_post(population_list):
     offspring = [Individual(None, None) for _ in range(POPULATION_SIZE)]
-    best_fitness = calculate_best_fitness(population_list)
-    worst_fitness = calculate_worst_fitness(population_list)
-    temp2 = 2
     for i in range(POPULATION_SIZE):
         if population_list[(i+1)< POPULATION_SIZE].fitness > population_list[i].fitness:
             offspring[i] = population_list[(i+1) < POPULATION_SIZE]
@@ -165,6 +110,8 @@ def selection_post(population_list):
             offspring[i] = population_list[i]
     return offspring
 
+# this function finds a random position and then swaps the tails of the gene from that random
+# position. It then finds the highest fitness of the switched genes to set the highest value to the offspring.
 
 def cross_over_max(population_list):
     offspring = [Individual(None, None) for _ in range(POPULATION_SIZE)]
@@ -193,32 +140,7 @@ def cross_over_max(population_list):
     return offspring
 
 
-def cross_over_min(population_list):
-    offspring = [Individual(None, None) for _ in range(POPULATION_SIZE)]
-    for i in range(POPULATION_SIZE):
-        temp_gene1 = [None] * GENE_SIZE
-        temp_gene2 = [None] * GENE_SIZE
-        parent1 = randrange(POPULATION_SIZE)
-        parent2 = randrange(POPULATION_SIZE)
-        cross_over_point = randrange(GENE_SIZE)
-
-        for j in range(GENE_SIZE):
-            if j > cross_over_point:
-                temp_gene1[j] = population_list[parent2].gene[j]
-                temp_gene2[j] = population_list[parent1].gene[j]
-            else:
-                temp_gene1[j] = population_list[parent1].gene[j]
-                temp_gene2[j] = population_list[parent2].gene[j]
-
-        if calculate_fitness_e2(temp_gene1) <= calculate_fitness_e2(temp_gene2):
-            offspring[i].gene = temp_gene1
-        else:
-            offspring[i].gene = temp_gene2
-
-        offspring[i].fitness = calculate_fitness_e2(offspring[i].gene)
-
-    return offspring
-
+# This function can change one bit of a gene if a random value is below a set mutation rate
 
 def mutation(population_list):
     offspring = [Individual(None, None) for _ in range(POPULATION_SIZE)]
@@ -233,6 +155,10 @@ def mutation(population_list):
             offspring[i] = population_list[i]
 
     return offspring
+
+# The main then produces a population then carries out selection, crossover and mutation on the population
+# It then prints out the gene string as well as the fitness of that gene as well as the mean and best value, the mean
+# and best are also then written into a file to produce graphs afterwards.
 
 
 def main():

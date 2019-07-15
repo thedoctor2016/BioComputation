@@ -5,11 +5,14 @@ import  random
 import math
 import csv
 
+# This GA Carries out the minimisation task on a binary set.
 POPULATION_SIZE = 50
 GENE_SIZE = 10
 MUTATION = 1
 
 # This class designates Individuals as having a Gene variable and a fitness variable
+
+
 class Individual:
     def __init__(self, gene, fitness):
         self.gene = gene
@@ -33,6 +36,9 @@ def populate_population_min():
 
     return population_list
 
+# This function divides the gene string in half and then based on the first bit value makes the resultant integer after
+# conversion a positive or negative. These two integers then goes through a mathematical function to find the fitness.
+
 
 def calculate_fitness_e2(gene):
     x = gene[:len(gene)//2]
@@ -52,6 +58,9 @@ def calculate_fitness_e2(gene):
     return fitness
 
 
+# this function adds up all the fitness values and divides it by the population size to get the average
+
+
 def calculate_mean_fitness(population_list):
     mean_fitness = 0
 
@@ -59,6 +68,9 @@ def calculate_mean_fitness(population_list):
         mean_fitness += population_list[i].fitness
 
     return mean_fitness / POPULATION_SIZE
+
+# this function sets a value to find the best fitness  and if a value is higher than it the the
+# # best fitness gets that fitness set to it, however as this is a minimisation function this finds the worst value.
 
 
 def calculate_best_fitness(population_list):
@@ -71,6 +83,9 @@ def calculate_best_fitness(population_list):
 
     return best_fitness
 
+# this function sets a value to find the worst fitness  and if a value is lower than it then the
+# # worst fitness gets that fitness set to it, however as this is a minimisation function this finds the best value.
+
 
 def calculate_worst_fitness(population_list):
     worst_fitness = 0
@@ -80,6 +95,9 @@ def calculate_worst_fitness(population_list):
             worst_fitness = population_list[i].fitness
 
     return worst_fitness
+
+# this function selects the best individual from two random parents by comparing fitness values. So for this function
+# best is the lowest of the two parents.
 
 
 def selection_min(population_list):
@@ -95,6 +113,8 @@ def selection_min(population_list):
 
     return offspring
 
+# this function selects the best individual from the offspring by comparing fitness values.
+
 
 def selection_post(population_list):
     offspring = [Individual(None, None) for _ in range(POPULATION_SIZE)]
@@ -107,6 +127,9 @@ def selection_post(population_list):
         else:
             offspring[i] = population_list[i]
     return offspring
+
+# this function finds a random position and then swaps the tails of the gene from that random
+# position. It then finds the lowest fitness of the switched genes to set the lowest value to the offspring.
 
 
 def cross_over_min(population_list):
@@ -135,6 +158,8 @@ def cross_over_min(population_list):
 
     return offspring
 
+# This function can change one bit of a gene if a random value is below a set mutation rate
+
 
 def mutation(population_list):
     offspring = [Individual(None, None) for _ in range(POPULATION_SIZE)]
@@ -150,6 +175,9 @@ def mutation(population_list):
 
     return offspring
 
+# The main then produces a population then carries out selection, crossover and mutation on the population
+# It then prints out the gene string as well as the fitness of that gene as well as the mean and best value, the mean
+# and best (which are the lowest) are also then written into a file to produce graphs afterwards.
 
 
 def main():
